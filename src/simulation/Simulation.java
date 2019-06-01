@@ -11,8 +11,8 @@ public class Simulation {
 
 	/**
 	 * utworzenie dwoch armii o zadanych rozmiarach
-	 * @param army1Size
-	 * @param army2Size
+	 * @param army1Size args[0]
+	 * @param army2Size args[1]
 	 */
 	public Simulation(int army1Size, int army2Size){
 		army1 = new Army(army1Size);
@@ -46,7 +46,7 @@ public class Simulation {
 
 	/**
 	 * glowna metoda
-	 * @param args
+	 * @param args wartosci z zewnatrz
 	 */
 	public static void main(String[] args){
 		//argumenty typu String zostaja sparsowane na Integer

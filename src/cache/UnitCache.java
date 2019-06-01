@@ -22,9 +22,8 @@ public class UnitCache {
 	}
 
 	/**
-	 * zwrocenie prototypow
-	 * @param unitID
-	 * @return
+	 * @param unitID etykieta
+	 * @return odpowiedni prototyp
 	 */
 	public IUnit getUnit(Integer unitID){
 
@@ -37,8 +36,7 @@ public class UnitCache {
 	}
 
 	/**
-	 * okreslenie ilosci prototypow
-	 * @return
+	 * @return rozmiar mapy/ilosc prototypow
 	 */
 	public int getSize(){
 		return unitPrototypes.size();

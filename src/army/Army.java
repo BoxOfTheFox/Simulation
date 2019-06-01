@@ -16,7 +16,7 @@ public class Army implements IArmy {
 
 	/**
 	 * konstruktor generujacy liste losowo wybranych prototypow jednostek
-	 * @param armySize
+	 * @param armySize wartosc przekazywana z Simulation
 	 */
 	public Army(int armySize){
 		rnd = new Random();
@@ -29,7 +29,7 @@ public class Army implements IArmy {
 
 	/**
 	 * metoda odbierajaca atak
-	 * @param attack
+	 * @param attack obiekt Attack
 	 */
 	@Override
 	public void receiveAttack(Attack attack) {
@@ -48,7 +48,7 @@ public class Army implements IArmy {
 
 	/**
 	 * metoda tworzaca atak przy pomocy losowej jednostki
-	 * @return
+	 * @return obiekt Attack
 	 */
 	@Override
 	public Attack makeAttack() {
@@ -64,7 +64,7 @@ public class Army implements IArmy {
 
 	/**
 	 * metoda sprawdza czy jednostka zyje
-	 * @return
+	 * @return true - jesli zyje, false - w innym przyadku
 	 */
 	@Override
 	public boolean isAlive() {
@@ -78,7 +78,7 @@ public class Army implements IArmy {
 	/**
 	 * wylosowanie jednostki z prototypu
 	 * 	zakres to ilosc prototypow
-	 * @return
+	 * @return losowy prototyp IUnit
 	 */
 	private IUnit getRandomCacheUnit(){
 		cache = new UnitCache();
@@ -88,7 +88,7 @@ public class Army implements IArmy {
 	/**
 	 * wylosowanie jednostki z listy jednostek
 	 * 	zakres to ilosc jednostek w liscie
-	 * @return
+	 * @return losowa jednostka z listy
 	 */
 	private IUnit getRandomListUnit(){
 		return unitList.get(rnd.nextInt(unitList.size()));

@@ -8,19 +8,19 @@ import attack.Attack;
 public interface IArmy {
 	/**
 	 * metoda przyjmuje obiekt ataku wygenerowany przez druga armie
-	 * @param attack
+	 * @param attack obiekt Attack
 	 */
 	void receiveAttack(Attack attack);
 
 	/**
 	 * metoda zwracajaca atak
-	 * @return
+	 * @return obiekt Attack
 	 */
 	Attack makeAttack();
 
 	/**
 	 * metoda sprawdzajaca czy jednostka jest zywa
-	 * @return
+	 * @return true - jesli zyje, false - w innym przypadku
 	 */
 	boolean isAlive();
 }

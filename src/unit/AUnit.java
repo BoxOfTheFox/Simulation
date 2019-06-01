@@ -12,8 +12,8 @@ public abstract class AUnit implements IUnit {
 
 	/**
 	 * ustawia wartosci hp i defense
-	 * @param hp
-	 * @param defense
+	 * @param hp wartosc hp
+	 * @param defense wartosc defense
 	 */
 	public AUnit(int hp, int defense){
 		this.hp=hp;
@@ -21,8 +21,7 @@ public abstract class AUnit implements IUnit {
 	}
 
 	/**
-	 * tworzy klon obiektu
-	 * @return
+	 * @return klon obiektu
 	 */
 	@Override
 	public IUnit clone() {
@@ -31,7 +30,7 @@ public abstract class AUnit implements IUnit {
 
 	/**
 	 * odbiera atak drugiej armii
-	 * @param attack
+	 * @param attack obiekt Attack
 	 */
 	@Override
 	public void receiveAttack(Attack attack) {
@@ -39,7 +38,7 @@ public abstract class AUnit implements IUnit {
 
 	/**
 	 * sprawdza czy jednostka zyje
-	 * @return
+	 * @return true - jesli tak, false - w przeciwnym przypadku
 	 */
 	@Override
 	public boolean isAlive() {
@@ -50,8 +49,7 @@ public abstract class AUnit implements IUnit {
 	}
 
 	/**
-	 * zwraca wartosc hp
-	 * @return
+	 * @return wartosc hp
 	 */
 	@Override
 	public int getHp() {
@@ -59,8 +57,7 @@ public abstract class AUnit implements IUnit {
 	}
 
 	/**
-	 * zwraca wartosc defense
-	 * @return
+	 * @return wartosc defense
 	 */
 	@Override
 	public int getDefense() {

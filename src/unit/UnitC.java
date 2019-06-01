@@ -12,7 +12,7 @@ public class UnitC extends AUnit{
 
 	/**
 	 * tworzy klon jednostki
-	 * @return
+	 * @return klon UnitC
 	 */
 	@Override
 	public IUnit clone() {
@@ -23,7 +23,7 @@ public class UnitC extends AUnit{
 	 * przyjmuje atak i od jego wartosci odejmuje ilosc hp jednostki
 	 * 	nastepnie ustawia wartosc hp jednostki,
 	 * 	w przypadku smierci jednostki dodaje 10 do wartosci ataku
-	 * @param attack
+	 * @param attack obiekt Attack
 	 */
 	@Override
 	public void receiveAttack(Attack attack) {

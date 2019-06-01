@@ -7,32 +7,29 @@ import attack.Attack;
  */
 public interface IUnit {
 	/**
-	 * tworzy klon obiektu jednostki
-	 * @return
+	 * @return klon obiektu
 	 */
 	IUnit clone();
 
 	/**
-	 * atakuje jednostke
-	 * @param attack
+	 * odbiera wartosc ataku
+	 * @param attack obiekt Attack
 	 */
 	void receiveAttack(Attack attack);
 
 	/**
 	 * sprawdza czy jednostka jest zywa
-	 * @return
+	 * @return true - jesli zyje, false - w  innym wypadku
 	 */
 	boolean isAlive();
 
 	/**
-	 * zwraca ilosc hp
-	 * @return
+	 * @return ilosc hp
 	 */
 	int getHp();
 
 	/**
-	 * zwraca ilosc defence
-	 * @return
+	 * @return ilosc defense
 	 */
 	int getDefense();
 }
