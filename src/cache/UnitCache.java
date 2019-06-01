@@ -9,15 +9,15 @@ public class UnitCache {
 	public UnitCache(){
 		unitPrototypes = new HashMap<>();
 
-		//unitPrototypes.put(0,new UnitA(110,40));
-		//unitPrototypes.put(1,new UnitB(100,30));
-		//unitPrototypes.put(2,new UnitA(90,20));
+		unitPrototypes.put(0,new UnitA(110,40));
+		unitPrototypes.put(1,new UnitB(100,30));
+		unitPrototypes.put(2,new UnitC(90,20));
 
 	}
 
 	public IUnit getUnit(Integer unitID){
 		try {
-			return unitPrototypes.get(unitID).clone();
+			return (IUnit) unitPrototypes.get(unitID).clone();
 		}catch (NullPointerException ex){
 			System.out.println("Prototype with name: " + unitID + ", doesn't exist");
 			return null;

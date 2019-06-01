@@ -3,7 +3,7 @@ package unit;
 import attack.Attack;
 
 public interface IUnit {
-	IUnit clone();
+	Object clone();
 	void receiveAttack(Attack attack);
 	boolean isAlive();
 	int getHp();
