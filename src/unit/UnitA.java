@@ -9,14 +9,6 @@ public class UnitA extends AUnit implements Cloneable {
 
 	@Override
 	public IUnit clone() {
-	//	Object clone = null;
-
-		//try {
-		//	clone = super.clone();
-//
-//		} catch (CloneNotSupportedException e) {
-//			e.printStackTrace();
-//		}
 
 		return new UnitA(110,40);
 	}

@@ -13,7 +13,7 @@ public abstract class AUnit implements IUnit {
 	}
 
 	@Override
-	public Object clone() {
+	public IUnit clone() {
 		return null;
 	}
 
