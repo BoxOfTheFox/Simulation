@@ -2,13 +2,13 @@ package unit;
 
 import attack.Attack;
 
-/* abstrakcyjna klasa jednostek */
+/** abstrakcyjna klasa jednostek */
 public abstract class AUnit implements IUnit {
 
 	protected int hp;
 	protected int defense;
 
-	/* ustawia wartosci hp i defense */
+	/** ustawia wartosci hp i defense */
 	public AUnit(int hp, int defense){
 		this.hp=hp;
 		this.defense=defense;
