@@ -2,6 +2,7 @@ package unit;
 
 import attack.Attack;
 
+/* klasa jednostki A */
 public class UnitA extends AUnit{
 	public UnitA() {
 		super(110, 40);
@@ -12,8 +13,10 @@ public class UnitA extends AUnit{
 		return new UnitA();
 	}
 
-	//przyjmuje atak i odejmuje jego wartosc od ilosci hp,
-	//nastepnie zeruje atak
+	/*
+	przyjmuje atak i odejmuje jego wartosc od ilosci hp,
+	nastepnie zeruje atak
+	*/
 	@Override
 	public void receiveAttack(Attack attack) {
 		int attackValue = attack.getAttack();

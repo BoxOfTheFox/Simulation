@@ -5,13 +5,14 @@ import cache.UnitCache;
 import unit.IUnit;
 import java.util.*;
 
+/* klasa armii */
 public class Army implements IArmy {
 	private Random rnd;
 	private List<IUnit> unitList;
 	private UnitCache cache;
 	private IUnit unit;
 
-	//konstruktor generujacy liste losowo wybranych prototypow jednostek
+	/* konstruktor generujacy liste losowo wybranych prototypow jednostek */
 	public Army(int armySize){
 		rnd = new Random();
 		unitList = new LinkedList<>();
@@ -57,15 +58,19 @@ public class Army implements IArmy {
 			return true;
 	}
 
-	//wylosowanie jednostki z prototypu
-	//zakres to ilosc prototypow
+	/*
+	wylosowanie jednostki z prototypu
+	zakres to ilosc prototypow
+	*/
 	private IUnit getRandomCacheUnit(){
 		cache = new UnitCache();
 		return cache.getUnit(rnd.nextInt(cache.getSize()));
 	}
 
-	//wylosowanie jesdnostki z listy jednostek
-	//zakres to ilosc jednostek w liscie
+	/*
+	wylosowanie jesdnostki z listy jednostek
+	zakres to ilosc jednostek w liscie
+	*/
 	private IUnit getRandomListUnit(){
 		return unitList.get(rnd.nextInt(unitList.size()));
 	}

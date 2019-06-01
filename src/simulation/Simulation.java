@@ -2,17 +2,18 @@ package simulation;
 
 import army.*;
 
+/* klasa symulacji */
 public class Simulation {
 	private IArmy army1;
 	private IArmy army2;
 
-	//utworzenie dwoch armii o zadanych rozmiarach
+	/* utworzenie dwoch armii o zadanych rozmiarach */
 	public Simulation(int army1Size, int army2Size){
 		army1 = new Army(army1Size);
 		army2 = new Army(army2Size);
 	}
 
-	//odtwarzanie symulacji
+	/* odtwarzanie symulacji */
 	public 	void runSimulation(){
 		//petla sie wykonuje dopoki ktoras armia nie umrze
 		//armie naprzemian wykonuja u odbieraja ataki
