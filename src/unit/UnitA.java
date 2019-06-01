@@ -2,17 +2,18 @@ package unit;
 
 import attack.Attack;
 
-public class UnitA extends AUnit implements Cloneable {
-	public UnitA(int hp, int defense) {
-		super(hp, defense);
+public class UnitA extends AUnit{
+	public UnitA() {
+		super(110, 40);
 	}
 
 	@Override
 	public IUnit clone() {
-
-		return new UnitA(110,40);
+		return new UnitA();
 	}
 
+	//przyjmuje atak i odejmuje jego wartosc od ilosci hp,
+	//nastepnie zeruje atak
 	@Override
 	public void receiveAttack(Attack attack) {
 		int attackValue = attack.getAttack();

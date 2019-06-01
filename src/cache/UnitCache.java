@@ -6,15 +6,17 @@ import java.util.*;
 public class UnitCache {
 	private Map<Integer, IUnit> unitPrototypes;
 
+	//utworzenie prototypow
 	public UnitCache(){
 		unitPrototypes = new HashMap<>();
 
-		unitPrototypes.put(0,new UnitA(110,40));
-		unitPrototypes.put(1,new UnitB(100,30));
-		unitPrototypes.put(2,new UnitC(90,20));
+		unitPrototypes.put(0,new UnitA());
+		unitPrototypes.put(1,new UnitB());
+		unitPrototypes.put(2,new UnitC());
 
 	}
 
+	//zwrocenie prototypow
 	public IUnit getUnit(Integer unitID){
 		try {
 			return (IUnit) unitPrototypes.get(unitID).clone();
@@ -24,6 +26,7 @@ public class UnitCache {
 		}
 	}
 
+	//okreslenie ilosci prototypow
 	public int getSize(){
 		return unitPrototypes.size();
 	}

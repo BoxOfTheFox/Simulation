@@ -3,9 +3,14 @@ package unit;
 import attack.Attack;
 
 public interface IUnit {
-	Object clone();
+	// tworzy klon obiektu jednostki
+	IUnit clone();
+	//atakuje jednostke
 	void receiveAttack(Attack attack);
+	//sprawdza czy jednostka jest zywa
 	boolean isAlive();
+	//zwraca ilosc hp
 	int getHp();
-	int getDefence();
+	//zwraca ilosc defence
+	int getDefense();
 }

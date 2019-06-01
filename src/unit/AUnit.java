@@ -7,6 +7,7 @@ public abstract class AUnit implements IUnit {
 	protected int hp;
 	protected int defense;
 
+	//ustawia wartosci hp i defense
 	public AUnit(int hp, int defense){
 		this.hp=hp;
 		this.defense=defense;
@@ -35,7 +36,7 @@ public abstract class AUnit implements IUnit {
 	}
 
 	@Override
-	public int getDefence() {
+	public int getDefense() {
 		return defense;
 	}
 }
