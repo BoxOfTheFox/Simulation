@@ -11,7 +11,7 @@ public class Army implements IArmy {
 	private UnitCache cache;
 	private IUnit unit;
 	//UWAGA!!!
-	static int i=0;
+//	static int i=0;
 
 	public Army(int armySize){
 		rnd = new Random();
@@ -25,17 +25,17 @@ public class Army implements IArmy {
 
 	@Override
 	public void receiveAttack(Attack attack) {
-		System.out.println("recieveAttack in");
-		while(attack.isEmpty()==false){
-			System.out.println("recieveAttack loop nr. " + i++);
+	//	System.out.println("recieveAttack in");
+		while(attack.isEmpty()==false&&unitList.size()!=0){
+	//		System.out.println("recieveAttack loop nr. " + i++);
 			unit = getRandomListUnit();
 			unit.receiveAttack(attack);
 			if(unit.isAlive()==false){
 				unitList.remove(unit);
 			}
 		}
-		System.out.println("recieveAttack out");
-		i=0;
+	//	System.out.println("recieveAttack out");
+	//	i=0;
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class Army implements IArmy {
 	@Override
 	public boolean isAlive() {
 		if(unitList.size()==0) {
-			System.out.println("isAlive false");
+			//System.out.println("isAlive false");
 			return false;
 		}
 		else
