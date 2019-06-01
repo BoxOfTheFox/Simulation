@@ -2,16 +2,37 @@ package unit;
 
 import attack.Attack;
 
-/** interfej jednostek */
+/**
+ * interfej jednostek
+ */
 public interface IUnit {
-	/** tworzy klon obiektu jednostki */
+	/**
+	 * tworzy klon obiektu jednostki
+	 * @return
+	 */
 	IUnit clone();
-	/** atakuje jednostke */
+
+	/**
+	 * atakuje jednostke
+	 * @param attack
+	 */
 	void receiveAttack(Attack attack);
-	/** sprawdza czy jednostka jest zywa */
+
+	/**
+	 * sprawdza czy jednostka jest zywa
+	 * @return
+	 */
 	boolean isAlive();
-	/** zwraca ilosc hp */
+
+	/**
+	 * zwraca ilosc hp
+	 * @return
+	 */
 	int getHp();
-	/** zwraca ilosc defence */
+
+	/**
+	 * zwraca ilosc defence
+	 * @return
+	 */
 	int getDefense();
 }

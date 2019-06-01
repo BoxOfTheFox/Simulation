@@ -2,21 +2,28 @@ package unit;
 
 import attack.Attack;
 
-/** klasa jednostki A */
+/**
+ * klasa jednostki A
+ */
 public class UnitA extends AUnit{
 	public UnitA() {
 		super(110, 40);
 	}
 
+	/**
+	 * tworzy klon jednostki
+	 * @return
+	 */
 	@Override
 	public IUnit clone() {
 		return new UnitA();
 	}
 
 	/**
-	przyjmuje atak i odejmuje jego wartosc od ilosci hp,
-	nastepnie zeruje atak
-	*/
+	 * przyjmuje atak i odejmuje jego wartosc od ilosci hp,
+	 * 	nastepnie zeruje atak
+	 * @param attack
+	 */
 	@Override
 	public void receiveAttack(Attack attack) {
 		int attackValue = attack.getAttack();

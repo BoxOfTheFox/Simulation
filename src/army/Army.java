@@ -5,14 +5,19 @@ import cache.UnitCache;
 import unit.IUnit;
 import java.util.*;
 
-/** klasa armii */
+/**
+ * klasa armii
+ */
 public class Army implements IArmy {
 	private Random rnd;
 	private List<IUnit> unitList;
 	private UnitCache cache;
 	private IUnit unit;
 
-	/** konstruktor generujacy liste losowo wybranych prototypow jednostek */
+	/**
+	 * konstruktor generujacy liste losowo wybranych prototypow jednostek
+	 * @param armySize
+	 */
 	public Army(int armySize){
 		rnd = new Random();
 		unitList = new LinkedList<>();
@@ -22,6 +27,10 @@ public class Army implements IArmy {
 		}
 	}
 
+	/**
+	 * metoda odbierajaca atak
+	 * @param attack
+	 */
 	@Override
 	public void receiveAttack(Attack attack) {
 		//petla sprawdza czy obiekt ataku nie jest pusty
@@ -37,6 +46,10 @@ public class Army implements IArmy {
 		}
 	}
 
+	/**
+	 * metoda tworzaca atak przy pomocy losowej jednostki
+	 * @return
+	 */
 	@Override
 	public Attack makeAttack() {
 		Attack attack = new Attack();
@@ -49,6 +62,10 @@ public class Army implements IArmy {
 		return attack;
 	}
 
+	/**
+	 * metoda sprawdza czy jednostka zyje
+	 * @return
+	 */
 	@Override
 	public boolean isAlive() {
 		if(unitList.size()==0) {
@@ -59,18 +76,20 @@ public class Army implements IArmy {
 	}
 
 	/**
-	wylosowanie jednostki z prototypu
-	zakres to ilosc prototypow
-	*/
+	 * wylosowanie jednostki z prototypu
+	 * 	zakres to ilosc prototypow
+	 * @return
+	 */
 	private IUnit getRandomCacheUnit(){
 		cache = new UnitCache();
 		return cache.getUnit(rnd.nextInt(cache.getSize()));
 	}
 
 	/**
-	wylosowanie jesdnostki z listy jednostek
-	zakres to ilosc jednostek w liscie
-	*/
+	 * wylosowanie jednostki z listy jednostek
+	 * 	zakres to ilosc jednostek w liscie
+	 * @return
+	 */
 	private IUnit getRandomListUnit(){
 		return unitList.get(rnd.nextInt(unitList.size()));
 	}

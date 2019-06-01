@@ -3,11 +3,15 @@ package cache;
 import unit.*;
 import java.util.*;
 
-/** klasa prototypu */
+/**
+ * klasa prototypu
+ */
 public class UnitCache {
 	private Map<Integer, IUnit> unitPrototypes;
 
-	/** utworzenie prototypow */
+	/**
+	 * utworzenie prototypow
+	 */
 	public UnitCache(){
 		unitPrototypes = new HashMap<>();
 
@@ -17,8 +21,13 @@ public class UnitCache {
 
 	}
 
-	/** zwrocenie prototypow */
+	/**
+	 * zwrocenie prototypow
+	 * @param unitID
+	 * @return
+	 */
 	public IUnit getUnit(Integer unitID){
+
 		try {
 			return unitPrototypes.get(unitID).clone();
 		}catch (NullPointerException ex){
@@ -27,7 +36,10 @@ public class UnitCache {
 		}
 	}
 
-	/** okreslenie ilosci prototypow */
+	/**
+	 * okreslenie ilosci prototypow
+	 * @return
+	 */
 	public int getSize(){
 		return unitPrototypes.size();
 	}

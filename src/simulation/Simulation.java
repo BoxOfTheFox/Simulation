@@ -2,18 +2,26 @@ package simulation;
 
 import army.*;
 
-/** klasa symulacji */
+/**
+ * klasa symulacji
+ */
 public class Simulation {
 	private IArmy army1;
 	private IArmy army2;
 
-	/** utworzenie dwoch armii o zadanych rozmiarach */
+	/**
+	 * utworzenie dwoch armii o zadanych rozmiarach
+	 * @param army1Size
+	 * @param army2Size
+	 */
 	public Simulation(int army1Size, int army2Size){
 		army1 = new Army(army1Size);
 		army2 = new Army(army2Size);
 	}
 
-	/** odtwarzanie symulacji */
+	/**
+	 * odtwarzanie symulacji
+	 */
 	public 	void runSimulation(){
 		//petla sie wykonuje dopoki ktoras armia nie umrze
 		//armie naprzemian wykonuja u odbieraja ataki
@@ -36,6 +44,10 @@ public class Simulation {
 		}
 	}
 
+	/**
+	 * glowna metoda
+	 * @param args
+	 */
 	public static void main(String[] args){
 		//argumenty typu String zostaja sparsowane na Integer
 		Simulation sim = new Simulation(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
