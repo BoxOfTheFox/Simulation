@@ -15,13 +15,11 @@ public class Simulation {
 		while(army1.isAlive()&&army2.isAlive()){
 			army1.receiveAttack(army2.makeAttack());
 			if(army1.isAlive()==false){
-				System.out.println("Army1 died");
 				break;
 			}
 
 			army2.receiveAttack(army1.makeAttack());
 		}
-		//System.out.println("after runSimulation");
 		if(army1.isAlive()){
 			System.out.println("Army1 won");
 		}
