@@ -11,8 +11,8 @@ public class Simulation {
 
 	/**
 	 * utworzenie dwoch armii o zadanych rozmiarach
-	 * @param army1Size args[0]
-	 * @param army2Size args[1]
+	 * @param army1Size rozmiar armii 1
+	 * @param army2Size rozmiar armii 2
 	 */
 	public Simulation(int army1Size, int army2Size){
 		army1 = new Army(army1Size);
