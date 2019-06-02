@@ -33,7 +33,7 @@ public class UnitB extends AUnit{
 			hp=0;
 		}
 		else{
-			attack.setAttack(hp-attackValue);
+			attack.setAttack(0);
 			hp-=attackValue;
 		}
 	}

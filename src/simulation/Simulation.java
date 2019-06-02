@@ -24,7 +24,7 @@ public class Simulation {
 	 */
 	public 	void runSimulation(){
 		//petla sie wykonuje dopoki ktoras armia nie umrze
-		//armie naprzemian wykonuja u odbieraja ataki
+		//armie naprzemian wykonuja i odbieraja ataki
 		while(army1.isAlive()&&army2.isAlive()){
 			army1.receiveAttack(army2.makeAttack());
 			//przypadek gdy army1 otrzyma atak, ktory ja zabije
