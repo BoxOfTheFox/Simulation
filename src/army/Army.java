@@ -13,6 +13,7 @@ public class Army implements IArmy {
 	private List<IUnit> unitList;
 	private UnitCache cache;
 	private IUnit unit;
+	private Attack attack;
 
 	/**
 	 * konstruktor generujacy liste losowo wybranych prototypow jednostek
@@ -52,7 +53,7 @@ public class Army implements IArmy {
 	 */
 	@Override
 	public Attack makeAttack() {
-		Attack attack = new Attack();
+		attack = new Attack();
 		unit = getRandomListUnit();
 		//obliczenie wartosci ataku od losowo wybranej jednostki oraz
 		//ustawienie tej wartosci w obiekcie Attack
