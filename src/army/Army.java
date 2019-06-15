@@ -2,6 +2,7 @@ package army;
 
 import attack.Attack;
 import cache.UnitCache;
+import csvlogger.CsvLogger;
 import unit.IUnit;
 import java.util.*;
 
@@ -14,6 +15,8 @@ public class Army implements IArmy {
 	private UnitCache cache;
 	private IUnit unit;
 	private Attack attack;
+	private CsvLogger logger;
+	private static int armyNumber;
 
 	/**
 	 * konstruktor generujacy liste losowo wybranych prototypow jednostek
@@ -22,6 +25,7 @@ public class Army implements IArmy {
 	public Army(int armySize){
 		rnd = new Random();
 		unitList = new LinkedList<>();
+		logger = CsvLogger.getInstance();
 
 		for(int i=0;i<armySize;i++){
 			unitList.add(getRandomCacheUnit());
@@ -37,13 +41,15 @@ public class Army implements IArmy {
 		//petla sprawdza czy obiekt ataku nie jest pusty
 		//i czy lista jednostek nie jest pusta
 		//(przypadek gdy zginie ostatnia jednostka i nie wyzeruje ataku)
-		while(attack.isEmpty()==false&&unitList.size()!=0){
+		logger.add("defender",attack.getAttack(), unitListSize());
+		while(attack.isEmpty()==false&&unitListSize()!=0) {
 			unit = getRandomListUnit();
 			unit.receiveAttack(attack);
 			//jesli jednostka umrze zostaje usunieta z listy
-			if(unit.isAlive()==false){
+			if (unit.isAlive() == false) {
 				unitList.remove(unit);
 			}
+			logger.add("defender",attack.getAttack(), unitListSize());
 		}
 	}
 
@@ -59,6 +65,7 @@ public class Army implements IArmy {
 		//ustawienie tej wartosci w obiekcie Attack
 		int attackValue = (unit.getDefense()+unit.getHp())/2;
 		attack.setAttack(attackValue);
+		logger.add("attacker",attackValue, unitListSize());
 
 		return attack;
 	}
@@ -70,6 +77,7 @@ public class Army implements IArmy {
 	@Override
 	public boolean isAlive() {
 		if(unitList.size()==0) {
+			logger.close();
 			return false;
 		}
 		else
@@ -92,6 +100,10 @@ public class Army implements IArmy {
 	 * @return losowa jednostka z listy
 	 */
 	private IUnit getRandomListUnit(){
-		return unitList.get(rnd.nextInt(unitList.size()));
+		return unitList.get(rnd.nextInt(unitListSize()));
+	}
+
+	private int unitListSize(){
+		return unitList.size();
 	}
 }

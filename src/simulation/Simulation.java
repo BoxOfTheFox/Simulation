@@ -1,6 +1,7 @@
 package simulation;
 
 import army.*;
+import csvlogger.CsvLogger;
 
 /**
  * klasa symulacji
@@ -39,9 +40,10 @@ public class Simulation {
 		if(army1.isAlive()){
 			System.out.println("Army1 won");
 		}
-		else{
+		else {
 			System.out.println("Army2 won");
 		}
+
 	}
 
 	/**
