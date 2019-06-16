@@ -19,7 +19,7 @@ public class Army implements IArmy {
 	private static int armyNumber;
 
 	/**
-	 * konstruktor generujacy liste losowo wybranych prototypow jednostek
+	 * konstruktor generujacy liste losowo wybranych prototypow jednostek oraz pobierajacy loggera
 	 * @param armySize wartosc przekazywana z Simulation
 	 */
 	public Army(int armySize){
@@ -38,15 +38,18 @@ public class Army implements IArmy {
 	 */
 	@Override
 	public void receiveAttack(Attack attack) {
-		//petla sprawdza czy obiekt ataku nie jest pusty
-		//i czy lista jednostek nie jest pusta
-		//(przypadek gdy zginie ostatnia jednostka i nie wyzeruje ataku)
+		/*
+		petla sprawdza czy obiekt ataku nie jest pusty
+		i czy lista jednostek nie jest pusta
+		(przypadek gdy zginie ostatnia jednostka i nie wyzeruje ataku)
+		Dodatkowo zostaja przeslane informacje do logger. Inofrmacje zawieraja, jaka jednostka, wartosc ataku, ilosc jednostek w armii
+		*/
 		logger.add("defender",attack.getAttack(), unitListSize());
-		while(attack.isEmpty()==false&&unitListSize()!=0) {
+		while(!attack.isEmpty() &&unitListSize()!=0) {
 			unit = getRandomListUnit();
 			unit.receiveAttack(attack);
 			//jesli jednostka umrze zostaje usunieta z listy
-			if (unit.isAlive() == false) {
+			if (!unit.isAlive()) {
 				unitList.remove(unit);
 			}
 			logger.add("defender",attack.getAttack(), unitListSize());
@@ -61,8 +64,11 @@ public class Army implements IArmy {
 	public Attack makeAttack() {
 		attack = new Attack();
 		unit = getRandomListUnit();
-		//obliczenie wartosci ataku od losowo wybranej jednostki oraz
-		//ustawienie tej wartosci w obiekcie Attack
+		/*
+		obliczenie wartosci ataku od losowo wybranej jednostki oraz
+		ustawienie tej wartosci w obiekcie Attack
+		DOdatkowo zostaje przeslane informacje do loggera. Inofrmacje zawieraja, jaka jednostka, wartosc ataku, ilosc jednostek w armii
+		*/
 		int attackValue = (unit.getDefense()+unit.getHp())/2;
 		attack.setAttack(attackValue);
 		logger.add("attacker",attackValue, unitListSize());
