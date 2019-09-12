@@ -26,13 +26,7 @@ public class UnitCache {
 	 * @return odpowiedni prototyp
 	 */
 	public IUnit getUnit(Integer unitID){
-
-		try {
-			return unitPrototypes.get(unitID).clone();
-		}catch (NullPointerException ex){
-			System.out.println("Prototype with name: " + unitID + ", doesn't exist");
-			return null;
-		}
+	return unitPrototypes.get(unitID).clone();
 	}
 
 	/**

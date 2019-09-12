@@ -5,7 +5,7 @@ import attack.Attack;
 /**
  * abstrakcyjna klasa jednostek
  */
-public abstract class AUnit implements IUnit {
+public abstract class AUnit implements IUnit, Cloneable {
 
 	protected int hp;
 	protected int defense;
@@ -25,7 +25,15 @@ public abstract class AUnit implements IUnit {
 	 */
 	@Override
 	public IUnit clone() {
-		return null;
+		IUnit clone = null;
+
+		try{
+			clone = (IUnit) super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+
+		return clone;
 	}
 
 	/**

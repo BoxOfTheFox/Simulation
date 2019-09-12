@@ -16,7 +16,6 @@ public class Army implements IArmy {
 	private IUnit unit;
 	private Attack attack;
 	private CsvLogger logger;
-	private static int armyNumber;
 
 	/**
 	 * konstruktor generujacy liste losowo wybranych prototypow jednostek oraz pobierajacy loggera
@@ -49,8 +48,7 @@ public class Army implements IArmy {
 			unit = getRandomListUnit();
 			unit.receiveAttack(attack);
 			//jesli jednostka umrze zostaje usunieta z listy
-			if (!unit.isAlive()) {
-				unitList.remove(unit);
+			if (!unit.isAlive()) { unitList.remove(unit);
 			}
 			logger.add("defender",attack.getAttack(), unitListSize());
 		}

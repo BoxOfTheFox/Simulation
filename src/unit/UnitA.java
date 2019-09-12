@@ -11,15 +11,6 @@ public class UnitA extends AUnit{
 	}
 
 	/**
-	 * tworzy klon jednostki
-	 * @return klon UnitA
-	 */
-	@Override
-	public IUnit clone() {
-		return new UnitA();
-	}
-
-	/**
 	 * przyjmuje atak i odejmuje jego wartosc od ilosci hp,
 	 * 	nastepnie zeruje atak
 	 * @param attack obiekt Attack

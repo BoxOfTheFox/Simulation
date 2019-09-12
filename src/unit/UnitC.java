@@ -11,15 +11,6 @@ public class UnitC extends AUnit{
 	}
 
 	/**
-	 * tworzy klon jednostki
-	 * @return klon UnitC
-	 */
-	@Override
-	public IUnit clone() {
-		return new UnitC();
-	}
-
-	/**
 	 * przyjmuje atak i od jego wartosci odejmuje ilosc hp jednostki
 	 * 	nastepnie ustawia wartosc hp jednostki,
 	 * 	w przypadku smierci jednostki dodaje 10 do wartosci ataku
